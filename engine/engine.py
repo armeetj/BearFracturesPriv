@@ -1,5 +1,6 @@
 """
 author: @Armeet Jatyani (@xarmeetx)
+2019
 """
 
 from __future__ import absolute_import, division, print_function, unicode_literals
@@ -47,3 +48,5 @@ for folder in train_folder_raw_data:
             with open (TRAIN_PATH + "/" + f, "r") as temp_label:
                 data=str(temp_label.readlines()[0])
                 train_labels.append(data);
+
+print("Written by Armeet Singh Jatyani 2019")

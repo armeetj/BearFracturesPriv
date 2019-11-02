@@ -1,8 +1,12 @@
+"""
+author: @Armeet Jatyani (@xarmeetx)
+2019
+"""
+
 import shutil
 import os
 import csv
-    
-    
+       
 imgnumb = 1;
 with open('engine/train_hand_paths.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')

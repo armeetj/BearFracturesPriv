@@ -1,5 +1,6 @@
 """
 author: @Armeet Jatyani (@xarmeetx)
+2019
 """
 
 import os
@@ -40,12 +41,13 @@ for patient in z:
             print("    reading: " + f)
             print("    writing: " + patient + "_image" + str(imgnumb )+ "_" + str(imgnumsection) + ".png")
             shutil.copy((finalPath+ "/" + f), "engine/XR_HAND_dataset/train/" + patient +"_image"+ str(imgnumb) + "_" + str(imgnumsection) + ".png", follow_symlinks=True)
-            imgnumsection = imgnumsection + 1;
-
+        
             if finalResult=="0":
                 shutil.copy("engine/XR_HAND_dataset/result0.txt", "engine/XR_HAND_dataset/train/" + patient +"_result"+ str(imgnumb) + "_" + str(imgnumsection) + ".txt", follow_symlinks=True)
             else:
                 shutil.copy("engine/XR_HAND_dataset/result1.txt", "engine/XR_HAND_dataset/train/" + patient +"_result"+ str(imgnumb) + "_" + str(imgnumsection) + ".txt", follow_symlinks=True)
+            
+            imgnumsection = imgnumsection + 1;
     imgnumsection = 1;
     imgnumb = imgnumb + 1;
 
@@ -70,11 +72,12 @@ for patient in z:
             print("reading: " + f)
             print("writing: " + patient + "_image" + str(imgnumb )+ "_" + str(imgnumsection) + ".png")
             shutil.copy((finalPath+ "/" + f), "engine/XR_HAND_dataset/valid/" + patient +"_image"+ str(imgnumb) + "_" + str(imgnumsection) + ".png", follow_symlinks=True)
-            imgnumsection = imgnumsection + 1;
 
             if finalResult=="0":
                 shutil.copy("engine/XR_HAND_dataset/result0.txt", "engine/XR_HAND_dataset/valid/" + patient +"_result"+ str(imgnumb) + "_" + str(imgnumsection) + ".txt", follow_symlinks=True)
             else:
                 shutil.copy("engine/XR_HAND_dataset/result1.txt", "engine/XR_HAND_dataset/valid/" + patient +"_result"+ str(imgnumb) + "_" + str(imgnumsection) + ".txt", follow_symlinks=True)
+            imgnumsection = imgnumsection + 1;
+
     imgnumsection = 1;
     imgnumb = imgnumb + 1;
