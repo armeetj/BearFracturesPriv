@@ -1,0 +1,25 @@
+
+# Define data path
+data_path = PATH + '/data'
+data_dir_list = os.listdir(data_path)
+
+
+for dataset in data_dir_list:
+	img_list=os.listdir(data_path+'/'+ dataset)
+	print ('Loading the images of dataset-'+'{}\n'.format(dataset))
+	label = classes[dataset]
+	for img in img_list:
+		input_img=cv2.imread(data_path + '/'+ dataset + '/'+ img )
+		input_img=cv2.cvtColor(input_img, cv2.COLOR_BGR2GRAY)
+		input_img_resize=cv2.resize(input_img,(128,128))
+		raw_images.append(input_img_resize)
+		train_labels.append(label)
+
+img_data = np.array(raw_images)
+img_data = img_data.astype('float32')
+img_data /= 255
+print (img_data.shape)
+
+# Normalize pixel values to be between 0 and 1
+train_images, test_images = train_images / 255.0, test_images / 255.0
+

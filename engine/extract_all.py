@@ -1,3 +1,7 @@
+"""
+author: @Armeet Jatyani (@xarmeetx)
+"""
+
 import os
 import shutil
 import csv
@@ -11,7 +15,7 @@ for root, dirs, files in os.walk('engine/XR_HAND_dataset/'):
 os.mkdir("engine/XR_HAND_dataset/train")
 os.mkdir("engine/XR_HAND_dataset/valid")
 
-print("Continue? (y)/(n): ")
+print("continue? (y)/(n): ")
 if(input()=="n"):
     exit();
 
@@ -33,8 +37,8 @@ for patient in z:
     images = [i[2] for i in os.walk(finalPath)]
     for t in images:
         for f in t:
-            print("reading: " + f)
-            print("writing: " + patient + "_image" + str(imgnumb )+ "_" + str(imgnumsection) + ".png")
+            print("    reading: " + f)
+            print("    writing: " + patient + "_image" + str(imgnumb )+ "_" + str(imgnumsection) + ".png")
             shutil.copy((finalPath+ "/" + f), "engine/XR_HAND_dataset/train/" + patient +"_image"+ str(imgnumb) + "_" + str(imgnumsection) + ".png", follow_symlinks=True)
             imgnumsection = imgnumsection + 1;
 
